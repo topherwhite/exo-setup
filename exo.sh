@@ -4,7 +4,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
 
 ACTION=$1
 
-REPO_DIR="$SCRIPT_DIR/exo"
+REPO_DIR="$SCRIPT_DIR/../exo"
 
 if [ "$ACTION" = "install" ]; then
 
