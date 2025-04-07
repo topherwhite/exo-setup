@@ -9,10 +9,10 @@ REPO_DIR="$SCRIPT_DIR/exo"
 if [ "$ACTION" = "install" ]; then
 
 	if [ ! -d "$REPO_DIR" ]; then
-		git clone https://github.com/exo-explore/exo $REPO_DIR
+		git clone https://github.com/topherwhite/exo $REPO_DIR
 
-		$SCRIPT_DIR/scr/text_search_replace.sh $REPO_DIR/setup.py "grpcio==1.71.0" "grpcio==1.70.0"
-		$SCRIPT_DIR/scr/text_search_replace.sh $REPO_DIR/setup.py "grpcio-tools==1.71.0" "grpcio-tools==1.70.0"
+		# $SCRIPT_DIR/scr/text_search_replace.sh $REPO_DIR/setup.py "grpcio==1.71.0" "grpcio==1.70.0"
+		# $SCRIPT_DIR/scr/text_search_replace.sh $REPO_DIR/setup.py "grpcio-tools==1.71.0" "grpcio-tools==1.70.0"
 
 		/opt/homebrew/bin/pyenv install 3.12.9 --skip-existing
 		/opt/homebrew/bin/pyenv uninstall --force exo
