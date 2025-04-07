@@ -6,22 +6,7 @@ ACTION=$1
 
 REPO_DIR="$SCRIPT_DIR/exo"
 
-if [ "$ACTION" = "sync_models" ]; then
-
-	MODELS_DIR_LOCAL="$HOME/.cache/exo/downloads"
-
-	mkdir -p $MODELS_DIR_LOCAL
-
-	MODELS_DIR_CACHE="/Volumes/NAS/Cluster/_cache/exo/downloads_active"
-	MODELS_DIR_ADDRESS="//plexbackup:derc0956@qnap10g/PlexBackup"
-
-	if [ ! -d "$MODELS_DIR_CACHE" ]; then
-		echo "Cannot find Model backup directory (NAS)"
-	else 
-		echo "syncing exo models from NAS..."
-	fi
-
-elif [ "$ACTION" = "install" ]; then
+if [ "$ACTION" = "install" ]; then
 
 	if [ ! -d "$REPO_DIR" ]; then
 		git clone https://github.com/exo-explore/exo $REPO_DIR
@@ -46,7 +31,6 @@ elif [ "$ACTION" = "reinstall" ]; then
 elif [ "$ACTION" = "run" ]; then
 
 	$SCRIPT_DIR/exo.sh install
-	$SCRIPT_DIR/exo.sh sync_models
 
 	cd $REPO_DIR
 	git pull
